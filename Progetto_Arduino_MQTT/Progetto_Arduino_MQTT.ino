@@ -39,16 +39,16 @@ void setup_wifi() {
     delay(500);
     Serial.print(".");
   }
-  Serial.println("\n✅ WiFi connesso");
+  Serial.println("\n WiFi connesso");
 }
 
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Connessione a MQTT...");
     if (client.connect("ESP32Client")) {
-      Serial.println(" ✅ connesso");
+      Serial.println("  connesso");
     } else {
-      Serial.print(" ❌ errore: ");
+      Serial.print(" errore: ");
       Serial.print(client.state());
       delay(2000);
     }
