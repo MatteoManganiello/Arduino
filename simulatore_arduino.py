@@ -18,19 +18,19 @@ while True:
 
     if distanza < 20:
         alarm_count += 1
-        print("🔊 Buzzer ATTIVO (distanza critica)")
+        print(" Buzzer ATTIVO (distanza critica)")
 
         if alarm_count == 9:
-            print("⚠️ Buzzer NEGATIVO ATTIVO per 10 secondi!")
+            print(" Buzzer NEGATIVO ATTIVO per 10 secondi!")
             for i in range(10):
-                print(f"⏱ Secondi trascorsi: {i + 1}")
+                print(f" Secondi trascorsi: {i + 1}")
                 time.sleep(1)
-            print("✅ Buzzer NEGATIVO SPENTO")
+            print(" Buzzer NEGATIVO SPENTO")
             alarm_count = 0
     else:
-        print("✅ Distanza sicura - buzzer spento")
+        print(" Distanza sicura - buzzer spento")
 
     client.publish(topic, str(distanza))
-    print(f"📤 Pubblicato su MQTT: {distanza} cm\n")
+    print(f" Pubblicato su MQTT: {distanza} cm\n")
 
     time.sleep(2)
